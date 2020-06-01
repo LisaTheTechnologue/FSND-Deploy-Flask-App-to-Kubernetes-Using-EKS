@@ -14,7 +14,7 @@ phases:
       - mkdir -p $HOME/bin && cp ./aws-iam-authenticator $HOME/bin/aws-iam-authenticator && export PATH=$HOME/bin:$PATH
       - aws-iam-authenticator help
       # Configure kubectl
-      - aws eks --region us-west-2 update-kubeconfig --name simple-jwt-api
+      - aws eks --region us-west-2 update-kubeconfig --cluster-name simple-jwt-api
   build:
     commands:
       - kubectl apply -f deployment
